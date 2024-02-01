@@ -1,0 +1,4 @@
+- Importing data with available id and order_id (defined as uuid in db) would come with conflicts when there are already data with dublicated ids in the database.
+- It would be better if we have 2 other columns 'old_id' and 'old_order_id' which will be imported from the csv files and the 'id' and 'order_id' will be filled automatically by server.
+- If the changes in schema is under developement, we can still migrate but with clean database to avoid conflict, this may lead to time-consuming and effort-taking in case of migrating a lot of data.
+- Furthermore, using normal tool like MySQL Workbench can be considered for more flexibility, ui-friendliness and less configuratory need. Using python and uuid need to convert uuid to string or hexadecimal before inserting to MYSQL and then using UNHEX() function in MYSQL to convert to binary.
